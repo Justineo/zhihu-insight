@@ -4,7 +4,7 @@
 // @version 1.0.0
 // @description 添加已有回答的索引，方便浏览热门问题。
 // @author Justineo(justice360@gmail.com)
-// @match https://github.com/*
+// @match https://www.zhihu.com/*
 // @grant none
 // @updateURL https://justineo.github.io/zhihu-insight/userscript/dist/zhihu-insight.user.js
 // ==/UserScript==
