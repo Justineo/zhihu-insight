@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+  "name": "知乎回答索引",
+  "description": "在知乎问题页添加已有回答的索引，方便浏览热门问题。",
+  "version": "1.0.0",
+  "icons": {},
+  "content_scripts": [
+    {
+      "matches": [
+        "http://www.zhihu.com/*",
+        "https://www.zhihu.com/*"
+      ],
+      "js": [
+        "insight.js"
+      ]
+    }
+  ]
+}

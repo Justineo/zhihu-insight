@@ -1,0 +1,14 @@
+{
+  "title": "知乎回答索引",
+  "name": "zhihu-insight",
+  "version": "1.0.0",
+  "description": "在知乎问题页添加已有回答的索引，方便浏览热门问题。",
+  "main": "index.js",
+  "author": "Justineo",
+  "homepage": "https://github.com/Justineo/zhihu-insight/",
+  "engines": {
+    "firefox": ">=38.0a1",
+    "fennec": ">=38.0a1"
+  },
+  "license": "MIT"
+}
