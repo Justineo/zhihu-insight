@@ -5,7 +5,6 @@ var del = require('del');
 var exec = require('child_process').exec;
 var replace = require('gulp-replace');
 var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
 var pack = JSON.parse(fs.readFileSync('./package.json', { encoding: 'utf8' }));
 var version = pack.version;
 
@@ -18,11 +17,10 @@ gulp.task('cp', function () {
 gulp.task('userscript', function () {
   return gulp.src([
       './userscript/src/metadata.js',
-      './src/inject.js'
+      './src/insight.js'
     ])
     .pipe(concat('zhihu-insight.user.js'))
     .pipe(replace('{{version}}', version))
-    .pipe(uglify())
     .pipe(gulp.dest('./userscript/dist'));
 });
 

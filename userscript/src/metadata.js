@@ -1,11 +1,10 @@
 // ==UserScript==
-// @name GitHub Hovercard
+// @name 知乎回答索引
 // @namespace https://justineo.github.io/
 // @version {{version}}
-// @description Neat user/repo/issue hovercards for GitHub.
+// @description 添加已有回答的索引，方便浏览热门问题。
 // @author Justineo(justice360@gmail.com)
 // @match https://github.com/*
 // @grant none
-// @updateURL https://justineo.github.io/github-hovercard/userscript/dist/github-hovercard.user.js
-// @icon https://justineo.github.io/github-hovercard/icon.png
+// @updateURL https://justineo.github.io/zhihu-insight/userscript/dist/zhihu-insight.user.js
 // ==/UserScript==
