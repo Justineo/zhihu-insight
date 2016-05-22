@@ -9,7 +9,7 @@ var pack = JSON.parse(fs.readFileSync('./package.json', { encoding: 'utf8' }));
 var version = pack.version;
 
 gulp.task('cp', function () {
-  return gulp.src(['./src/insight.js'])
+  return gulp.src(['./src/insight.js', './assets/logo.png'])
     .pipe(gulp.dest('./extensions/chrome'))
     .pipe(gulp.dest('./extensions/firefox/data'));
 });

@@ -3,7 +3,9 @@
   "name": "知乎回答索引",
   "description": "在知乎问题页添加已有回答的索引，方便浏览热门问题。",
   "version": "1.0.0",
-  "icons": {},
+  "icons": {
+    "128": "logo.png"
+  },
   "content_scripts": [
     {
       "matches": [

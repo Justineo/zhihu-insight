@@ -7,4 +7,5 @@
 // @match https://www.zhihu.com/*
 // @grant none
 // @updateURL https://justineo.github.io/zhihu-insight/userscript/dist/zhihu-insight.user.js
+// @icon https://justineo.github.io/zhihu-insight/assets/logo.png
 // ==/UserScript==
