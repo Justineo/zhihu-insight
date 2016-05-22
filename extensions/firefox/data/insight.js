@@ -225,7 +225,7 @@
       setState('isFixed', !getState('isFixed'));
       updateState();
     });
-    root.addEventListener('click', function () {
+    root.addEventListener('click', function (event) {
       let target = event.target;
       if (target.id === 'zhins-more') {
         target.classList.add('loading');
