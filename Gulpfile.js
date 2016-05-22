@@ -32,7 +32,7 @@ gulp.task('chrome:zip', ['cp'], function (cb) {
   manifest.version = version;
   fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, '  '));
   exec(
-    'find . -path \'*/.*\' -prune -o -type f -print | zip ../packed/github-hovercard.zip -@',
+    'find . -path \'*/.*\' -prune -o -type f -print | zip ../packed/zhihu-insight.zip -@',
     { cwd: 'extensions/chrome' },
     function (error, stdout, stderr) {
       if (error) {
@@ -70,7 +70,7 @@ gulp.task('opera:nex', ['chrome:zip'], function (cb) {
       if (error) {
         return cb(error);
       } else {
-        fs.renameSync('./extensions/chrome.crx', './extensions/packed/github-hovercard.nex');
+        fs.renameSync('./extensions/chrome.crx', './extensions/packed/zhihu-insight.nex');
         cb();
       }
     }

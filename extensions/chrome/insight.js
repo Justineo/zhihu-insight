@@ -1,5 +1,5 @@
 (function () {
-  if (!location.pathname.match(/\/question\/\d+$/)) {
+  if (!location.pathname.match(/\/question\/\d+$/) || !document.querySelector('.zu-top-nav-userinfo')) {
     return;
   }
 
@@ -299,7 +299,7 @@
 
       let avatarHTML = item.avatar
         ? `<img class="zhins-avatar" src="${item.avatar}" data-tip="p$t$${item.authorId}">`
-        : '';
+        : '<img class="zhins-avatar" src="https://pic2.zhimg.com/aadd7b895_s.jpg">';
 
       let html =
 `<li class="zhins-item">
