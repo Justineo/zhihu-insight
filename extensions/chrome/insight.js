@@ -287,18 +287,19 @@
         aid: elem.dataset.aid,
         token: elem.dataset.atoken,
         authorName: authorLink ? authorLink.textContent : '匿名用户',
-        authorId: authorLink ? authorLink.getAttribute('href').replace('/people/', '') : null,
+        authorId: authorLink ? authorLink.getAttribute('href').replace(/\/(people|org)\//, '') : null,
         avatar: authorLink ? elem.querySelector('.zm-list-avatar').src : null,
+        isOrg: !!elem.querySelector('.OrgIcon'),
         votes: parseInt(elem.querySelector('.zm-item-vote-info').dataset.votecount, 10),
         comments: parseInt((elem.querySelector('.z-icon-comment').nextSibling.textContent.match(/\d+/) || ['0'])[0], 10)
       };
 
       let authorHTML = authorLink
-        ? `<span data-tip="p$t$${item.authorId}">${item.authorName}</span>`
+        ? `<span data-hovercard="p$t$${item.authorId}">${item.authorName}</span>` + (item.isOrg ? `<span class="OrgIcon sprite-global-icon-org-14" data-tooltip="s$b$已认证的机构"></span>` : '')
         : `<span>${item.authorName}</span>`
 
       let avatarHTML = item.avatar
-        ? `<img class="zhins-avatar" src="${item.avatar}" data-tip="p$t$${item.authorId}">`
+        ? `<img class="zhins-avatar" src="${item.avatar}" data-hovercard="p$t$${item.authorId}">`
         : '<img class="zhins-avatar" src="https://pic2.zhimg.com/aadd7b895_s.jpg">';
 
       let html =
