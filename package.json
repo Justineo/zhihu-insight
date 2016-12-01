@@ -1,6 +1,6 @@
 {
   "name": "zhihu-insight",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "Quick overview inside Zhihu hot questions.",
   "main": "index.js",
   "scripts": {

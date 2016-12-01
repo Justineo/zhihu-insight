@@ -197,6 +197,12 @@
   top: ${fixedTop}px;
   right: calc(50vw - 480px);
   bottom: 0;
+}
+
+#zhins .icon-badge {
+  margin-left: 3px;
+  vertical-align: -2px;
+  height: 14px;
 }`;
 
     createStyles(styles);
@@ -280,7 +286,8 @@
   function extract() {
     last = document.querySelector('.zm-item-answer:last-child');
     let content = Array.from(document.querySelectorAll('.zm-item-answer')).map((elem, i) => {
-      let authorLink = elem.querySelector('.author-link');
+      let authorLink = elem.querySelector('.zm-item-answer-author-info .author-link');
+      let badge = elem.querySelector('.zm-item-answer-author-info .author-link + .icon-badge, .zm-item-answer-author-info .author-link + .OrgIcon');
 
       let item = {
         href: elem.querySelector('link').getAttribute('href'),
@@ -288,19 +295,20 @@
         token: elem.dataset.atoken,
         authorName: authorLink ? authorLink.textContent : '匿名用户',
         authorId: authorLink ? authorLink.getAttribute('href').replace(/\/(people|org)\//, '') : null,
-        avatar: authorLink ? elem.querySelector('.zm-list-avatar').src : null,
-        isOrg: !!elem.querySelector('.OrgIcon'),
+        avatar: authorLink ? elem.querySelector('.zm-list-avatar').src.replace(/_s\.jpg/, '_xs.jpg') : null,
         votes: parseInt(elem.querySelector('.zm-item-vote-info').dataset.votecount, 10),
         comments: parseInt((elem.querySelector('.z-icon-comment').nextSibling.textContent.match(/\d+/) || ['0'])[0], 10)
       };
 
+      let badgeHTML = badge ? badge.outerHTML : '';
+
       let authorHTML = authorLink
-        ? `<span data-hovercard="p$t$${item.authorId}">${item.authorName}</span>` + (item.isOrg ? `<span class="OrgIcon sprite-global-icon-org-14" data-tooltip="s$b$已认证的机构"></span>` : '')
+        ? `<span data-hovercard="p$t$${item.authorId}">${item.authorName}</span>${badgeHTML}`
         : `<span>${item.authorName}</span>`
 
       let avatarHTML = item.avatar
         ? `<img class="zhins-avatar" src="${item.avatar}" data-hovercard="p$t$${item.authorId}">`
-        : '<img class="zhins-avatar" src="https://pic2.zhimg.com/aadd7b895_s.jpg">';
+        : '<img class="zhins-avatar" src="https://pic2.zhimg.com/aadd7b895_xs.jpg">';
 
       let html =
 `<li class="zhins-item">
