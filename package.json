@@ -10,7 +10,7 @@
     "Zhihu"
   ],
   "devDependencies": {
-    "del": "^2.2.0",
+    "del": "^8.0.0",
     "gulp": "^3.8.9",
     "gulp-concat": "^2.6.0",
     "gulp-replace": "^0.5.4",
